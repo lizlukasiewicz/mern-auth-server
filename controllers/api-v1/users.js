@@ -84,6 +84,7 @@ router.post('/login', async (req, res) => {
 })
 
 // GET /auth-locked -- middleware that checks if userware is allowed to be here - will redirect if a bad jwt is found
+//can be applied to any amount of routes, always require the header
 router.get('/auth-locked', authLockedRoute, (req, res) => {
     //do whatever we like with the user
     console.log(res.locals.user)
