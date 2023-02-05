@@ -18,7 +18,7 @@ router.post ('/register', async (req, res) => {
         })
         //if the user us found -- dont let them register
         if(findUser) return res.status(400).json({msg: 'user already exists'})
-        console.log(findUser)
+        console.log(`🛸 logging findUser::${findUser}`)
 
         //hash password from req.body
         const password = req.body.password
